@@ -1,5 +1,5 @@
 /***********************************************************************
- * BasicOS Operating System
+ * SimplixOS Operating System
  *
  * File: sys/utsname.h
  *
@@ -8,7 +8,7 @@
  *      IEEE STD 1003.1, 2013 Edition
  *
  * License:
- * BasicOS Operating System - An experimental operating system.
+ * SimplixOS Operating System - An experimental operating system.
  * Copyright (C) 2015 Aun-Ali Zaidi and its contributors.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,11 +32,11 @@
 #define _UTS_LEN 64
 
 struct utsname {
-  char sysname[_UTS_LEN + 1]; /* [XSI] Name of Operating System */
-  char nodename[_UTS_LEN + 1];  /* [XSI] Name of network node */
-  char release[_UTS_LEN + 1]; /* [XSI] Release level */
-  char version[_UTS_LEN + 1]; /* [XSI] Version level */
-  char machine[_UTS_LEN + 1]; /* [XSI] Hardware type */
+  char sysname[_UTS_LEN + 1];  /* [XSI] Name of Operating System */
+  char nodename[_UTS_LEN + 1]; /* [XSI] Name of network node */
+  char release[_UTS_LEN + 1];  /* [XSI] Release level */
+  char version[_UTS_LEN + 1];  /* [XSI] Version level */
+  char machine[_UTS_LEN + 1];  /* [XSI] Hardware type */
 };
 
 int uname(struct utsname *name);
