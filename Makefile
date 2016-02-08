@@ -19,6 +19,14 @@
 #       along with this program. If not, see <http://www.gnu.org/licenses/>.  #
 ###############################################################################
 
+# Verbosity Control
+# TODO: Change it to support the use of different verbosity flags.
+ifdef V
+cmd = $1
+else
+cmd = @$(if $(value 2),echo "$2";)$1
+endif
+
 CC=../../../cross/os-toolchain/bin/i686-simplix-gcc
 AR=../../../cross/os-toolchain/bin/i686-simplix-ar
 RANLIB=../../../cross/os-toolchain/bin/i686-simplix-ranlib
@@ -52,14 +60,22 @@ BIN=libposix.a
 all: $(SOURCES) $(BIN)
 
 $(BIN): $(OBJS)
-	$(AR) rcsv $@ $(OBJS)
+	$(call cmd, \
+	$(AR) rcs $@ $(OBJS), \
+	AR $(BIN))
 	@test -d $(BIN_DIR) || mkdir $(BIN_DIR)
-	$(RANLIB) $(BIN)
+	$(call cmd, \
+	$(RANLIB) $(BIN), \
+	RANLIB $(BIN))
 	@cp $(BIN) $(BIN_DIR)/
 
 obj/%.libposix.o: %.c
 	@test -d $(@D) || mkdir $(@D)
-	$(CC) -c $< -o $@ $(CFLAGS)
+	$(call cmd, \
+	$(CC) -c $< -o $@ $(CFLAGS), \
+	CC $<)
 
 clean:
-	rm -rf $(OBJS) $(OBJDIR)$(BIN) $(OBJDIR) $(BIN_DIR)/$(BIN) $(BIN)
+	$(call cmd, \
+	rm -rf $(OBJS) $(OBJDIR)$(BIN) $(OBJDIR) $(BIN_DIR)/$(BIN) $(BIN), \
+	CLEAN lib/libposix)
