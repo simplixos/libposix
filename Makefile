@@ -78,4 +78,4 @@ obj/%.libposix.o: %.c
 clean:
 	$(call cmd, \
 	rm -rf $(OBJS) $(OBJDIR)$(BIN) $(OBJDIR) $(BIN_DIR)/$(BIN) $(BIN), \
-	CLEAN lib/libposix)
+	CLEAN lib/libposix/)
