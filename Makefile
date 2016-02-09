@@ -62,7 +62,7 @@ all: $(SOURCES) $(BIN)
 $(BIN): $(OBJS)
 	$(call cmd, \
 	$(AR) rcs $@ $(OBJS), \
-	AR $(BIN))
+	AR 	$(BIN))
 	@test -d $(BIN_DIR) || mkdir $(BIN_DIR)
 	$(call cmd, \
 	$(RANLIB) $(BIN), \
@@ -73,7 +73,7 @@ obj/%.libposix.o: %.c
 	@test -d $(@D) || mkdir $(@D)
 	$(call cmd, \
 	$(CC) -c $< -o $@ $(CFLAGS), \
-	CC $<)
+	CC 	$<)
 
 clean:
 	$(call cmd, \
