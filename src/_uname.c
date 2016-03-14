@@ -6,6 +6,7 @@
  * Description:
  *      uname - retrieves system name structures.
  *      IEEE STD 1003.1, 2013 Edition
+ *      This file is part of the SimplixOS Kernel LibPOSIX.
  *
  * License:
  * SimplixOS Operating System - An experimental operating system.
@@ -27,7 +28,7 @@
  ***********************************************************************/
 
 #include <sys/utsname.h>
-#include <bos/k/defs.h>
+#include <simplix/k/defs.h>
 
 #include <string.h>
 
@@ -53,16 +54,16 @@
  */
 int uname(struct utsname *name)
 {
-  // TODO: Retrieve information from /etc/hostname
-  strcpy(name->nodename, "(none)");
+	// TODO: Retrieve information from /etc/hostname
+	strcpy(name->nodename, "(none)");
 
-  strcpy(name->sysname, BAS_UTS_SYSNAME);
-  strcpy(name->release, BAS_UTS_RELEASE);
-  strcpy(name->version, BAS_UTS_VERSION);
+	strcpy(name->sysname, BAS_UTS_SYSNAME);
+	strcpy(name->release, BAS_UTS_RELEASE);
+	strcpy(name->version, BAS_UTS_VERSION);
 
-  //#ifdef _x86
-    strcpy(name->machine, "i686");
-  //#endif
+	//#ifdef _x86
+		strcpy(name->machine, "i686");
+	//#endif
 
-  return 0;
+	return 0;
 }

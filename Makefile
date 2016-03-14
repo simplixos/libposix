@@ -38,7 +38,7 @@ LIBS=-lc
 INC_DIR=include/
 OS_INC_DIR=../../include/
 
-CFLAGS=-O2 -std=gnu99 -L$(LIBK_DIR) $(LIBS) -ffreestanding -fbuiltin -Wall -Wextra -I$(INC_DIR) -I$(LIBC_INC_DIR) -I$(OS_INC_DIR) -D__bos_libk -I../../include
+CFLAGS=-O2 -std=gnu99 -L$(LIBK_DIR) $(LIBS) -ffreestanding -fbuiltin -Wall -Wextra -I$(INC_DIR) -I$(LIBC_INC_DIR) -I$(OS_INC_DIR) -D__simplix_libk -I../../include
 
 SOURCES= src/_uname.c \
 
