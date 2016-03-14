@@ -57,9 +57,9 @@ int uname(struct utsname *name)
 	// TODO: Retrieve information from /etc/hostname
 	strcpy(name->nodename, "(none)");
 
-	strcpy(name->sysname, BAS_UTS_SYSNAME);
-	strcpy(name->release, BAS_UTS_RELEASE);
-	strcpy(name->version, BAS_UTS_VERSION);
+	strcpy(name->sysname, SIMPLIX_UTS_SYSNAME);
+	strcpy(name->release, SIMPLIX_UTS_RELEASE);
+	strcpy(name->version, SIMPLIX_UTS_VERSION);
 
 	//#ifdef _x86
 		strcpy(name->machine, "i686");
