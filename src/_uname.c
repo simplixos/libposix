@@ -1,7 +1,7 @@
 /***********************************************************************
  * SimplixOS Operating System
  *
- * File: lib/libposix/src/sys/utsname/_uname.c
+ * File: lib/libposix/src/_uname.c
  *
  * Description:
  *      uname - retrieves system name structures.

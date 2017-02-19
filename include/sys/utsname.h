@@ -1,7 +1,7 @@
 /***********************************************************************
  * SimplixOS Operating System
  *
- * File: sys/utsname.h
+ * File: lib/libposix/include/sys/utsname.h
  *
  * Description:
  *      Header that describes system name structures.
